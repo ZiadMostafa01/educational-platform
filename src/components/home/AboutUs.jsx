@@ -11,9 +11,9 @@ function AboutUs() {
         مين <span className="text-[var(--primary)]">احنا..؟ </span>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-x-20 p-5">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-20 p-5">
         <div
-          className="flex flex-col justify-center items-center lg:w-[700px] md:w-[600px] rounded-xl"
+          className="flex flex-col justify-center  items-center lg:w-[700px] md:w-[600px] rounded-xl"
           data-aos="fade-up"
           data-aos-duration="1000"
           style={{
@@ -43,7 +43,7 @@ function AboutUs() {
         </div>
 
         <div data-aos="fade-up" data-aos-duration="1000">
-          <img src={img} width="400" alt="" />
+          <img src={img} className="w-[300px] md:w-[400px]" alt="" />
         </div>
       </div>
     </section>

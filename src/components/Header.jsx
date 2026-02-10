@@ -11,7 +11,7 @@ import ProgressBar from "./ProgressBar";
 function MenuItem({ to, icon, label }) {
   return (
     <Link to={to}>
-      <div class="flex items-center px-4 py-2 gap-2 hover:bg-gray-300 rounded-md mb-2">
+      <div className="flex items-center px-4 py-2 gap-2 hover:bg-gray-300 rounded-md mb-2">
         <span className="text-[var(--icon)]">{icon}</span>
         <span>{label}</span>
       </div>
@@ -119,7 +119,7 @@ const menuIcons = {
       height="1.5em"
       viewBox="0 0 256 256"
       aria-hidden="true"
-      class="iconify iconify--ph"
+      className="iconify iconify--ph"
       preserveAspectRatio="xMidYMid meet"
       role="img"
     >
@@ -137,11 +137,11 @@ const menuIcons = {
 function Header() {
   const location = useLocation();
 
-const fixedRoutes = ["/", "/login", "/register"];
+  const fixedRoutes = ["/", "/login", "/register"];
 
-const headerClass = fixedRoutes.includes(location.pathname)
-  ? "fixed top-0 w-full z-50"
-  : "sticky top-0 w-full z-50";
+  const headerClass = fixedRoutes.includes(location.pathname)
+    ? "fixed top-0 w-full z-50"
+    : "sticky top-0 w-full z-50";
 
   const { isLoggedIn } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -165,13 +165,13 @@ const headerClass = fixedRoutes.includes(location.pathname)
         scrolled ? "bg-white" : "bg-transparent"
       }`}
     >
-      <div class="flex justify-between items-center py-2 max-w-[80rem] mx-auto px-2 sm:px-6 lg:px-8 h-[72px]">
+      <div className="flex justify-between items-center py-2 max-w-[80rem] mx-auto px-2 sm:px-6 lg:px-8 h-[72px]">
         {/* Header-Img */}
         <Link to="/">
-          <img src={logo} alt="logo" class="h-12 sm:h-14 w-auto" />
+          <img src={logo} alt="logo" className="h-12 sm:h-14 w-auto" />
         </Link>
         {/* Header-Btn */}
-        <div class="flex items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-6">
+        <div className="flex items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-6">
           {isLoggedIn ? (
             <>
               <div>
@@ -237,12 +237,12 @@ const headerClass = fixedRoutes.includes(location.pathname)
                 </div>
               </Link>
 
-              <div class="relative">
+              <div className="relative">
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  class="flex items-center justify-center rounded-full cursor-pointer"
+                  className="flex items-center justify-center rounded-full cursor-pointer"
                 >
-                  <img src={userIcon} alt="" class="w-10" />
+                  <img src={userIcon} alt="" className="w-10" />
                 </button>
 
                 <div
@@ -250,14 +250,14 @@ const headerClass = fixedRoutes.includes(location.pathname)
                     menuOpen ? "block" : "hidden"
                   }`}
                 >
-                  <div class="text-sm p-3">
+                  <div className="text-sm p-3">
                     <MenuItem
                       to={"/"}
                       label={"الصفحة الرئيسية"}
                       icon={menuIcons.main}
                     />
-                    <div class="h-1 bg-gray-300 my-2 mx-auto"></div>
-                    <div class="px-4 py-2 text-gray-700 text-center">
+                    <div className="h-1 bg-gray-300 my-2 mx-auto"></div>
+                    <div className="px-4 py-2 text-gray-700 text-center">
                       أهلاً Ziad Mostafa
                     </div>
                     <MenuItem
@@ -286,7 +286,7 @@ const headerClass = fixedRoutes.includes(location.pathname)
                       icon={menuIcons.exams}
                     />
                     <button className="w-full cursor-pointer text-start px-4 py-2 hover:bg-gray-300 rounded-md text-red-500">
-                      <i class="fa fa-sign-out ml-2"></i>{" "}
+                      <i className="fa fa-sign-out ml-2"></i>{" "}
                       <span> تسجيل خروج</span>
                     </button>
                   </div>
@@ -297,13 +297,13 @@ const headerClass = fixedRoutes.includes(location.pathname)
             <>
               <Link
                 to="/"
-                class="hidden md:inline-flex relative group items-center px-8 py-2 overflow-hidden text-lg font-medium text-[var(--primary)] border-2 border-[var(--primary)] rounded-md hover:text-white group hover:bg-gray-50"
+                className="hidden md:inline-flex relative group items-center px-8 py-2 overflow-hidden text-lg font-medium text-[var(--primary)] border-2 border-[var(--primary)] rounded-md hover:text-white group hover:bg-gray-50"
               >
-                <span class="absolute right-0 block w-full h-0 transition-all bg-[var(--primary)] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-200 ease"></span>
+                <span className="absolute right-0 block w-full h-0 transition-all bg-[var(--primary)] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-200 ease"></span>
 
-                <span class="absolute left-0 pl-2 flex items-center justify-end w-10 h-10 duration-300 transform -translate-x-full group-hover:translate-x-0 ease">
+                <span className="absolute left-0 pl-2 flex items-center justify-end w-10 h-10 duration-300 transform -translate-x-full group-hover:translate-x-0 ease">
                   <svg
-                    class="w-5 h-5"
+                    className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -318,23 +318,23 @@ const headerClass = fixedRoutes.includes(location.pathname)
                   </svg>
                 </span>
 
-                <span class="relative text-base font-semibold transition-all duration-300 group-hover:translate-x-3">
+                <span className="relative text-base font-semibold transition-all duration-300 group-hover:translate-x-3">
                   الرئيسية
                 </span>
               </Link>
 
               <Link
                 to="/login"
-                class="hidden md:flex relative items-center gap-1 rounded px-5 py-2.5 overflow-hidden group bg-[var(--primary)] hover:bg-gradient-to-r hover:from-[var(--primary)] hover:to-[var(--primary)] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[var(--primary)] transition-all ease-out duration-300"
+                className="hidden md:flex relative items-center gap-1 rounded px-5 py-2.5 overflow-hidden group bg-[var(--primary)] hover:bg-gradient-to-r hover:from-[var(--primary)] hover:to-[var(--primary)] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[var(--primary)] transition-all ease-out duration-300"
               >
-                <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 32 32"
-                  class="transition-transform duration-500 ease-in-out group-hover:rotate-180"
+                  className="transition-transform duration-500 ease-in-out group-hover:rotate-180"
                 >
                   <path
                     fill="currentColor"
@@ -342,27 +342,29 @@ const headerClass = fixedRoutes.includes(location.pathname)
                   />
                 </svg>
 
-                <span class="relative text-base font-semibold">سجل دخولك</span>
+                <span className="relative text-base font-semibold">
+                  سجل دخولك
+                </span>
               </Link>
 
               <Link
                 to="/register"
-                class="hidden md:flex items-center gap-1 relative rounded px-5 py-2.5 overflow-hidden group bg-[var(--primary)] hover:bg-gradient-to-r hover:from-imber-500 hover:to-[var(--primary)] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[var(--primary)] transition-all ease-out duration-300"
+                className="hidden md:flex items-center gap-1 relative rounded px-5 py-2.5 overflow-hidden group bg-[var(--primary)] hover:bg-gradient-to-r hover:from-imber-500 hover:to-[var(--primary)] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[var(--primary)] transition-all ease-out duration-300"
               >
-                <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                <i class="fa-solid fa-user-astronaut"></i>
-                <span class="relative text-base font-semibold">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <i className="fa-solid fa-user-astronaut"></i>
+                <span className="relative text-base font-semibold">
                   أنشئ حسابك الآن!
                 </span>
               </Link>
-              <Link to="/">
-                <div class="md:hidden flex justify-center items-center rounded-full p-2 bg-transparent border-2 border-cyan-400 hover:bg-cyan-100 transition duration-300">
+              <Link to="/" className="md:hidden">
+                <div className="flex justify-center items-center rounded-full p-2 bg-transparent border-2 border-cyan-400 hover:bg-cyan-100 transition duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="1.3em"
                     height="1.3em"
                     viewBox="0 0 24 24"
-                    class="text-cyan-500"
+                    className="text-cyan-500"
                   >
                     <path
                       fill="currentColor"
@@ -371,10 +373,10 @@ const headerClass = fixedRoutes.includes(location.pathname)
                   </svg>
                 </div>
               </Link>
-              <div>
+              <div className="md:hidden">
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="md:hidden cursor-pointer"
+                  className="cursor-pointer"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -467,25 +469,25 @@ const headerClass = fixedRoutes.includes(location.pathname)
                     </path>
                   </svg>
                 </button>{" "}
-                <div class="md:hidden">
+                <div className="md:hidden">
                   <div
                     className={`absolute flex flex-col items-center space-y-4 bg-blue-500 rounded-xl py-3 text-white left-2 right-2 drop-shadow-lg md:hidden transition-all duration-300 ${
                       mobileMenuOpen ? "block" : "hidden"
                     }`}
                   >
-                    <div class="px-4 pt-4 pb-5 space-y-4 w-full">
+                    <div className="px-4 pt-4 pb-5 space-y-4 w-full">
                       <Link
                         to="/register"
-                        class="group rounded-xl relative px-4 py-2 text-sm font-medium block bg-blue-800 hover:bg-blue-900"
+                        className="group rounded-xl relative px-4 py-2 text-sm font-medium block bg-blue-800 hover:bg-blue-900"
                       >
-                        <div class="flex justify-center items-center gap-1">
-                          <span class="flex-center-both trasnform font-h1 text-blue-400">
+                        <div className="flex justify-center items-center gap-1">
+                          <span className="flex-center-both trasnform font-h1 text-blue-400">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
                               viewBox="0 0 32 32"
-                              class="transition-transform duration-500 ease-in-out group-hover:rotate-180"
+                              className="transition-transform duration-500 ease-in-out group-hover:rotate-180"
                             >
                               <path
                                 fill="currentColor"
@@ -493,23 +495,23 @@ const headerClass = fixedRoutes.includes(location.pathname)
                               />
                             </svg>
                           </span>
-                          <span class="flex-center-both text-md">
+                          <span className="flex-center-both text-md">
                             انشئ حسابك الآن!
                           </span>
                         </div>
                       </Link>
                       <Link
                         to="/login"
-                        class="group rounded-xl relative px-4 py-2 text-sm font-medium block bg-blue-800 hover:bg-blue-900"
+                        className="group rounded-xl relative px-4 py-2 text-sm font-medium block bg-blue-800 hover:bg-blue-900"
                       >
-                        <div class="flex justify-center items-center gap-1">
-                          <span class="flex-center-both trasnform font-h1 text-blue-400">
+                        <div className="flex justify-center items-center gap-1">
+                          <span className="flex-center-both trasnform font-h1 text-blue-400">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
                               viewBox="0 0 32 32"
-                              class="transition-transform duration-500 ease-in-out group-hover:rotate-180"
+                              className="transition-transform duration-500 ease-in-out group-hover:rotate-180"
                             >
                               <path
                                 fill="currentColor"
@@ -517,7 +519,7 @@ const headerClass = fixedRoutes.includes(location.pathname)
                               />
                             </svg>
                           </span>
-                          <span class="flex-center-both text-md">
+                          <span className="flex-center-both text-md">
                             سجل دخولك
                           </span>
                         </div>

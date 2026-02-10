@@ -37,7 +37,7 @@ function ProgressBar() {
   return (
     <div
       ref={containerRef}
-      className="w-full bg-blue-100 overflow-hidden transition-all duration-200 ease-out h-0 opacity-0"
+      className="w-full bg-blue-100 overflow-hidden transition-all duration-400 ease-out h-0 opacity-0"
     >
       <div
         ref={progressRef}
